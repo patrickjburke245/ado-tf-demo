@@ -3,6 +3,7 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 #test2-add-code
+#  -backend-config=$(backend_tfvars)
 
 trigger:
 - main
@@ -49,7 +50,8 @@ stages:
             tokenSuffix: "}#"
 
         - bash: |
-            terraform init -backend-config=$(backend_tfvars) -input=false
+            terraform init -input=false
+            
           env:
             ARM_CLIENT_ID: $(sp_clientId)
             ARM_CLIENT_SECRET: $(sp_clientSecret)
