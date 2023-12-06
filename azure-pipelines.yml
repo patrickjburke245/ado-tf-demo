@@ -12,8 +12,8 @@ pool:
 parameters:
   - name: tf_version
     type: string
-  #- name: working_directory
-  #  type: string
+  - name: working_directory
+    type: string
   - name: environment
     type: string
 
