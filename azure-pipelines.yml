@@ -27,7 +27,7 @@ stages:
       - name: variable_tfvars
         value:  "/tf/environments/${{ parameters.environment }}/variables.tfvars"
       - name: infrastructure_workingdirectory
-        value:  "/"
+        value:  "./"
     jobs:
     - job:
       steps:
