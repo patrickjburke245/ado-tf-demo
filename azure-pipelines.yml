@@ -12,8 +12,8 @@ pool:
 parameters:
   - name: tf_version
     type: string
-  - name: working_directory
-    type: string
+  #- name: working_directory
+  #  type: string
   - name: environment
     type: string
 
@@ -23,11 +23,11 @@ stages:
     variables:
       - group: root-terraform-backend-credentials
       - name: backend_tfvars
-        value: "${{ parameters.working_directory }}/tf/backend/backend.ci.tfvars"
+        value: "/tf/backend/backend.ci.tfvars"
       - name: variable_tfvars
-        value:  "${{ parameters.working_directory }}/tf/environments/${{ parameters.environment }}/variables.tfvars"
+        value:  "/tf/environments/${{ parameters.environment }}/variables.tfvars"
       - name: infrastructure_workingdirectory
-        value:  "${{ parameters.working_directory }}/tf"
+        value:  "/tf"
     jobs:
     - job:
       steps:
